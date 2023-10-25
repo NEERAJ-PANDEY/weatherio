@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>weatherio</title>
+    <meta name="title" content="weatherio" />
+    <meta
+      name="description"
+      content="weatherio is a weather app made by codewithsadee"
+    />
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="./src/script.js" defer></script>
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="app.js" type="module"></script>
+    <script src="./route.js" type="module"></script>
+  </head>
+
+  <body>
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            src="./logo.png"
+            width="364"
+            height="58"
+            alt="logo"
+          />
+        </a>
+
+        <div class="search-view" data-search-view>
+          <div class="search-wrapper">
+            <input
+              type="search"
+              name="search"
+              placeholder="Search city Name down..."
+              autocomplete="off"
+              class="search-field"
+              data-search-field
+            />
+
+            <!-- <span class="m-icon leading-icon">search</span> -->
+
+            <button
+              class="icon-btn leading-icon has-state"
+              aria-label="close search"
+              data-search-toggler
+            >
+              <span class="m-icon">arrow_back</span>
+            </button>
+          </div>
+
+          <div class="search-result" data-search-result></div>
+        </div>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn has-state"
+            aria-label="open search"
+            data-search-toggler
+          >
+            <span class="m-icon icon">search</span>
+          </button>
+
+          <a
+            href="https://mannytechlabs-weatherio.netlify.app/#/current-location"
+            class="btn-primary has-state"
+            data-current-location-btn
+          >
+            <!-- <span class="m-icon">my_location</span> -->
+
+            <span class="span">Current Location</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article class="container" data-container>
+        <div class="content-left">
+          <!-- 
+          - #CURRENT WEATHER
+        -->
+
+          <section
+            class="section current-weather"
+            aria-label="current weather"
+            data-current-weather
+          ></section>
+
+          <!-- 
+          - #FORECAST
+        -->
+
+          <section
+            class="section forecast"
+            aria-labelledby="forecast-label"
+            data-5-day-forecast
+          ></section>
+        </div>
+
+        <div class="content-right">
+          <!-- 
+          - #HIGHLIGHTS
+        -->
+
+          <section
+            class="section highlights"
+            aria-labelledby="highlights-label"
+            data-highlights
+          ></section>
+
+          <!-- 
+          - #HOURLY FORECAST
+        -->
+
+          <section
+            class="section hourly-forecast"
+            aria-label="hourly forecast"
+            data-hourly-forecast
+          ></section>
+
+
+
+           <!--Weather Card-->
+  <div class="card">
+    <div class="search">
+      <input type="text" class="search-bar" placeholder="Search">
+      <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
+          width="1.5em" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+          </path>
+        </svg></button>
+    </div>
+    <div class="weather loading">
+      <h2 class="city">Weather in Manipal</h2>
+      <h1 class="temp">25.02°C</h1>
+      <div class="flex">
+        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+        <div class="description">Cloudy</div>
+      </div>
+      <div class="humidity">Humidity: 91%</div>
+      <div class="wind">Wind speed: 63.05 km/h</div>
+    </div>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/nagarajpandith/weather-app">
+      <img alt="github" src="./openweather.png" width="70" height="70"></a>
+  </div>
+  <!--Vanilla tilt.js Library Refer- https://micku7zu.github.io/vanilla-tilt.js/ -->  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 4,
+		speed: 800,
+    scale: 1.03,
+    glare: true,
+    "max-glare": 0.5,
+	});
+  </script>
+          <!-- 
+
+
+          - #FOOTER
+
+        -->
+
+          <footer class="footer">
+            <p class="body-3">
+             
+            </p>
+
+            <p class="body-3">
+              Powered By
+              <a
+                href="https://openweathermap.org/api"
+                title="Free OpenWeather Api"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="openweather.png"
+                  width="150"
+                  height="30"
+                  loading="lazy"
+                  alt="OpenWeather"
+                />
+              </a>
+            </p>
+          </footer>
+        </div>
+
+        <div class="loading" data-loading></div>
+      </article>
+    </main>
+
+    <!-- 
+    - #404 SECTION
+  -->
+
+    <section class="error-content" data-error-content>
+      <h2 class="heading">404</h2>
+
+      <p class="body-1">Page not found!</p>
+
+      <a href="https://mannytechlabs-weatherio.netlify.app/#/weather?lat=51.5073219&lon=-0.1276474" class="btn-primary">
+        <span class="span">Go Home</span>
+      </a>
+    </section>
+  </body>
+</html>
